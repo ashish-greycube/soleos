@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include soleos *.css
+recursive-include soleos *.csv
+recursive-include soleos *.html
+recursive-include soleos *.ico
+recursive-include soleos *.js
+recursive-include soleos *.json
+recursive-include soleos *.md
+recursive-include soleos *.png
+recursive-include soleos *.py
+recursive-include soleos *.svg
+recursive-include soleos *.txt
+recursive-exclude soleos *.pyc
