@@ -9,8 +9,8 @@ from soleos import __version__ as version
 setup(
 	name="soleos",
 	version=version,
-	description="Customization for Soleos",
-	author="GreyCube Technolgies",
+	description="Customiztion",
+	author="GreyCube Technologies",
 	author_email="admin@greycube.in",
 	packages=find_packages(),
 	zip_safe=False,

@@ -1,6 +1,6 @@
 ## Soleos
 
-Customization for Soleos
+Customiztion
 
 #### License
 
