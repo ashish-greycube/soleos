@@ -10,7 +10,7 @@ setup(
 	name="soleos",
 	version=version,
 	description="Customization for Soleos",
-	author="GreyCube Technologies",
+	author="GreyCube Technolgies",
 	author_email="admin@greycube.in",
 	packages=find_packages(),
 	zip_safe=False,

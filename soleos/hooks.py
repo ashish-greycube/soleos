@@ -2,7 +2,7 @@ from . import __version__ as app_version
 
 app_name = "soleos"
 app_title = "Soleos"
-app_publisher = "GreyCube Technologies"
+app_publisher = "GreyCube Technolgies"
 app_description = "Customization for Soleos"
 app_email = "admin@greycube.in"
 app_license = "MIT"
