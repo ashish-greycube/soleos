@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-15 17:00:12.355108",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_mstz9",
+  "purchase_order",
+  "purchase_threshold_",
+  "warning_prefrence_po",
+  "column_break_cqgrh",
+  "delivery_note",
+  "delivery_threshold_",
+  "warning_prefrence_dn"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_mstz9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Heading",
+   "label": "Purchase Order"
+  },
+  {
+   "fieldname": "purchase_threshold_",
+   "fieldtype": "Percent",
+   "label": "Purchase threshold %"
+  },
+  {
+   "fieldname": "warning_prefrence_po",
+   "fieldtype": "Select",
+   "label": "Warning Prefrence",
+   "options": "Warning\nStop"
+  },
+  {
+   "fieldname": "column_break_cqgrh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Heading",
+   "label": "Delivery Note"
+  },
+  {
+   "fieldname": "delivery_threshold_",
+   "fieldtype": "Percent",
+   "label": "Delivery Threshold %"
+  },
+  {
+   "fieldname": "warning_prefrence_dn",
+   "fieldtype": "Select",
+   "label": "Warning Prefrence",
+   "options": "Warning\nStop"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-15 17:00:12.355108",
+ "modified_by": "Administrator",
+ "module": "Soleos",
+ "name": "SOLEOS Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
