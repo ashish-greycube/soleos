@@ -30,7 +30,7 @@
  "modified": "2023-09-15 16:25:58.969250",
  "modified_by": "Administrator",
  "module": "Soleos",
- "name": "BOQ Template Soleos",
+ "name": "BOQ Template",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
