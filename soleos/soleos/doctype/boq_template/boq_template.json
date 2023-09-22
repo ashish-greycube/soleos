@@ -22,12 +22,12 @@
    "fieldname": "boq_template_details",
    "fieldtype": "Table",
    "label": "BOQ Template Details",
-   "options": "BOQ Template Details"
+   "options": "Solar BOQ Items"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-15 16:25:58.969250",
+ "modified": "2023-09-21 18:20:02.466565",
  "modified_by": "Administrator",
  "module": "Soleos",
  "name": "BOQ Template",

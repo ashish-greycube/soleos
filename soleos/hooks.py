@@ -30,7 +30,7 @@ app_license = "MIT"
 
 # include js in doctype views
 doctype_js = {
-    "Task": "public/js/task.js"
+    "Quotation": "public/js/quotation.js"
 }
 
 # doctype_js = {"doctype" : "public/js/doctype.js"}
@@ -122,13 +122,17 @@ doctype_js = {
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"Delivery Note": {
+		"on_submit": "soleos.soleos_api.dn_verify_cogs_against_payment_received",
+	},
+	"Purchase Order": {
+		"on_submit": "soleos.soleos_api.po_verify_cogs_against_payment_received",
+	},
+    "Task" :{
+		"validate": "soleos.soleos_api.validate_dependent_task_status",
+	}
+}
 
 # Scheduled Tasks
 # ---------------

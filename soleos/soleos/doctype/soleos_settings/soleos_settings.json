@@ -1,44 +1,37 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2023-09-15 17:00:12.355108",
+ "creation": "2023-09-21 19:07:37.002457",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "section_break_mstz9",
   "purchase_order",
-  "purchase_threshold_",
-  "warning_prefrence_po",
-  "column_break_cqgrh",
+  "po_threshold_percentage",
+  "po_warning_prefrence",
+  "po_role_allowed_to_exceed",
+  "column_break_ggc6u",
   "delivery_note",
-  "delivery_threshold_",
-  "warning_prefrence_dn"
+  "dn_threshold_percentage",
+  "dn_warning_prefrence",
+  "dn_role_allowed_to_exceed"
  ],
  "fields": [
-  {
-   "fieldname": "section_break_mstz9",
-   "fieldtype": "Section Break"
-  },
   {
    "fieldname": "purchase_order",
    "fieldtype": "Heading",
    "label": "Purchase Order"
   },
   {
-   "fieldname": "purchase_threshold_",
-   "fieldtype": "Percent",
-   "label": "Purchase threshold %"
-  },
-  {
-   "fieldname": "warning_prefrence_po",
+   "default": "Warning",
+   "fieldname": "po_warning_prefrence",
    "fieldtype": "Select",
    "label": "Warning Prefrence",
    "options": "Warning\nStop"
   },
   {
-   "fieldname": "column_break_cqgrh",
+   "fieldname": "column_break_ggc6u",
    "fieldtype": "Column Break"
   },
   {
@@ -47,33 +40,50 @@
    "label": "Delivery Note"
   },
   {
-   "fieldname": "delivery_threshold_",
-   "fieldtype": "Percent",
-   "label": "Delivery Threshold %"
-  },
-  {
-   "fieldname": "warning_prefrence_dn",
+   "default": "Warning",
+   "fieldname": "dn_warning_prefrence",
    "fieldtype": "Select",
    "label": "Warning Prefrence",
    "options": "Warning\nStop"
+  },
+  {
+   "fieldname": "po_role_allowed_to_exceed",
+   "fieldtype": "Link",
+   "label": "Role Allowed to Exceed",
+   "options": "Role"
+  },
+  {
+   "fieldname": "dn_role_allowed_to_exceed",
+   "fieldtype": "Link",
+   "label": "Role Allowed to Exceed",
+   "options": "Role"
+  },
+  {
+   "fieldname": "po_threshold_percentage",
+   "fieldtype": "Percent",
+   "label": "Purchase threshold %"
+  },
+  {
+   "fieldname": "dn_threshold_percentage",
+   "fieldtype": "Percent",
+   "label": "Delivery Threshold %"
   }
  ],
  "index_web_pages_for_search": 1,
+ "issingle": 1,
  "links": [],
- "modified": "2023-09-15 17:00:12.355108",
+ "modified": "2023-09-22 10:43:16.769880",
  "modified_by": "Administrator",
  "module": "Soleos",
- "name": "SOLEOS Settings",
+ "name": "Soleos Settings",
  "owner": "Administrator",
  "permissions": [
   {
    "create": 1,
    "delete": 1,
    "email": 1,
-   "export": 1,
    "print": 1,
    "read": 1,
-   "report": 1,
    "role": "System Manager",
    "share": 1,
    "write": 1

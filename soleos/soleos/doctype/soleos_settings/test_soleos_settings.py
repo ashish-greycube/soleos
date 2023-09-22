@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestSOLEOSSettings(FrappeTestCase):
+class TestSoleosSettings(FrappeTestCase):
 	pass
