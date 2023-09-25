@@ -155,15 +155,24 @@ GROUP BY
 
 
 def validate_dependent_task_status(self,method):
+	task_role_allowed_to_bypass_dependent_task = frappe.db.get_single_value('SOLEOS Settings', 'task_role_allowed_to_bypass_dependent_task')
+	user = frappe.get_doc("User", frappe.session.user)
+	user_roles = [d.role for d in user.roles or []]	
 	if self.status == "Working":
 		if self.depends_on and len(self.depends_on)>0:
 			for dep_task in self.depends_on:
 				dep_status = frappe.db.get_value('Task', dep_task.task, 'status')
 				if dep_status!= "Completed":
 					dep_task_url=get_link_to_form('Task',dep_task.task)
-					frappe.throw(
-						msg='{0}  has status {1}. Please complete it first.'.format(frappe.bold(dep_task_url),frappe.bold(dep_status)),
-						title='Dependent task is not complete'
-					)					
+					if (task_role_allowed_to_bypass_dependent_task in user_roles):
+						frappe.msgprint(
+							msg='{0}  has status {1}. Please complete it first.'.format(frappe.bold(dep_task_url),frappe.bold(dep_status)),
+							title='Dependent task is not complete'
+						)	
+					else:					
+						frappe.throw(
+							msg='{0}  has status {1}. Please complete it first.'.format(frappe.bold(dep_task_url),frappe.bold(dep_status)),
+							title='Dependent task is not complete'
+						)					
 
 

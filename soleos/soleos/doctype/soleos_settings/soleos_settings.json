@@ -15,7 +15,10 @@
   "delivery_note",
   "dn_threshold_percentage",
   "dn_warning_prefrence",
-  "dn_role_allowed_to_exceed"
+  "dn_role_allowed_to_exceed",
+  "section_break_sng6d",
+  "task",
+  "task_role_allowed_to_bypass_dependent_task"
  ],
  "fields": [
   {
@@ -67,12 +70,27 @@
    "fieldname": "dn_threshold_percentage",
    "fieldtype": "Percent",
    "label": "Delivery Threshold %"
+  },
+  {
+   "fieldname": "section_break_sng6d",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "task_role_allowed_to_bypass_dependent_task",
+   "fieldtype": "Link",
+   "label": "Role Allowed to Bypass Dependent Task",
+   "options": "Role"
+  },
+  {
+   "fieldname": "task",
+   "fieldtype": "Heading",
+   "label": "Task"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-09-22 10:43:16.769880",
+ "modified": "2023-09-25 18:36:54.197922",
  "modified_by": "Administrator",
  "module": "Soleos",
  "name": "Soleos Settings",
