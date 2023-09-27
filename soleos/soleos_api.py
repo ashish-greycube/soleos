@@ -5,10 +5,11 @@ from frappe.utils import  get_link_to_form
 
 @frappe.whitelist()
 def get_boq_items(boq_template_name):
+	print('boq_template_name',boq_template_name)
 	boq_template = frappe.get_doc('BOQ Template', boq_template_name)
 	boq_template_details = []
 	for i, boq_item in enumerate(boq_template.get("boq_template_details")):
-		boq_item = boq_item.as_dict()
+		# boq_item = boq_item.as_dict()
 		boq_template_details.append(boq_item)
 	return boq_template_details
 

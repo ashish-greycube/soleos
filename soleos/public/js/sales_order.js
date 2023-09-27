@@ -19,8 +19,20 @@ frappe.ui.form.on('Sales Order', {
                 callback: function(r) {
                     if(!r.exc && r.message) {
                         if(r.message) {
+                            var item_length =0
+                            if (frm.doc.boq_items_cf) {
+                                item_length = frm.doc.boq_items_cf.length 
+                            } 
                             for (let boq_item of r.message) {
-                                frm.add_child("boq_items_cf", boq_item);
+                                var new_row =frappe.model.add_child(frm.doc,"Solar BOQ Items","boq_items_cf");
+                                item_length++;
+                                new_row.idx = item_length;
+                                new_row["item_group"]=boq_item.item_group
+                                new_row["item_code"]=boq_item.item_code
+                                new_row["description"]=boq_item.description
+                                new_row["qty"]=boq_item.qty
+                                new_row["uom"]=boq_item.uom
+                                new_row["remarks"]=boq_item.remarks
                             }
                             frm.refresh_field('boq_items_cf')
                         }
