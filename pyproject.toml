@@ -1,5 +1,6 @@
 [project]
 name = "soleos"
+dynamic = ["version"]
 dependencies = [
     "geopy~=2.4.1"
 ]
