@@ -1,7 +1,9 @@
 import frappe
 from erpnext import get_default_company
 from frappe import _
-from frappe.utils import  get_link_to_form
+from frappe.utils import  get_link_to_form,flt
+import geopy
+from geopy import distance
 
 @frappe.whitelist()
 def get_boq_items(boq_template_name):
@@ -176,4 +178,28 @@ def validate_dependent_task_status(self,method):
 							title='Dependent task is not complete'
 						)					
 
+def check_with_geo_location_range(self,method):
+	if self.employee:
+		check_against_geo_location = frappe.db.get_value("Employee",self.employee,"custom_check_against_geo_location")
+		if check_against_geo_location and check_against_geo_location == 1:
+			if self.latitude and self.longitude:
+				current_latitude, current_longitude = self.latitude, self.longitude
+				current_geo_location = (current_latitude, current_longitude)
+				soleos_settings_doc = frappe.get_doc("Soleos Settings","Soleos Settings")
+				if len(soleos_settings_doc.office_location)>0:
+					allowed = False
+					for row in soleos_settings_doc.office_location:
+						office_latitude, office_longitude = row.latitude, row.longitude
+						office_geo_location = (office_latitude, office_longitude)
+						distance_between_two_points = distance.distance(current_geo_location, office_geo_location).m
 
+						if distance_between_two_points > row.allowed_check_in_range:
+							allowed = False
+						elif distance_between_two_points <= row.allowed_check_in_range:
+							allowed = True
+							break
+
+				if allowed == True:
+					frappe.msgprint(_("You are checked in, you are in {0} meters from office").format(flt(distance_between_two_points,2)),alert=True)
+				elif allowed == False:
+					frappe.throw(_("You are not allowed to check in because you are not in office location range."))

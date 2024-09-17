@@ -132,6 +132,9 @@ doc_events = {
 	},
     "Task" :{
 		"validate": "soleos.soleos_api.validate_dependent_task_status",
+	},
+    "Employee Checkin": {
+        "before_insert": "soleos.soleos_api.check_with_geo_location_range"
 	}
 }
 

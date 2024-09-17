@@ -18,7 +18,9 @@
   "dn_role_allowed_to_exceed",
   "section_break_sng6d",
   "task",
-  "task_role_allowed_to_bypass_dependent_task"
+  "task_role_allowed_to_bypass_dependent_task",
+  "geo_location_section",
+  "office_location"
  ],
  "fields": [
   {
@@ -85,12 +87,22 @@
    "fieldname": "task",
    "fieldtype": "Heading",
    "label": "Task"
+  },
+  {
+   "fieldname": "geo_location_section",
+   "fieldtype": "Section Break",
+   "label": "Geo Location"
+  },
+  {
+   "fieldname": "office_location",
+   "fieldtype": "Table",
+   "options": "Office Location"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-09-25 18:36:54.197922",
+ "modified": "2024-09-17 10:33:31.664665",
  "modified_by": "Administrator",
  "module": "Soleos",
  "name": "Soleos Settings",
