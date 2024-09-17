@@ -1,7 +1,7 @@
 [project]
 name = "soleos"
 dependencies = [
-    "geopy"
+    "geopy~=2.4.1"
 ]
 
 
