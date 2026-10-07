@@ -1,17 +1,11 @@
 [project]
 name = "soleos"
 dynamic = ["version"]
-dependencies = [
-    "geopy~=2.4.1"
-]
-
-
 description = "Customization for Soleos"
 requires-python = ">=3.10"
 readme = "README.md"
-dynamic = ["version"]
 dependencies = [
-    # "frappe~=16.0.0" # Installed and managed by bench.
+    "geopy~=2.4.1"
 ]
 
 [build-system]
